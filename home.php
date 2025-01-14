@@ -44,14 +44,18 @@ $conn->close();
         <?php if ($result->num_rows > 0): ?>
             <?php while($article = $result->fetch_assoc()): ?>
                 <li>
-                    <h3><a href="account.php?user_id=<?php echo htmlspecialchars($article['id_author']); ?>"><?php echo htmlspecialchars($article['name']); ?></a></h3>
+                    <h3><?php echo htmlspecialchars($article['name']); ?></a></h3>
                     <p><?php echo htmlspecialchars($article['description']); ?></p>
                     <p>Price: <?php echo htmlspecialchars($article['price']); ?></p>
                     <p>Published on: <?php echo htmlspecialchars($article['publish_date']); ?></p>
-                    <p>Author: <?php echo htmlspecialchars($article['username']); ?></p>
+                    <p>Author: <a href="account.php?user_id=<?php echo htmlspecialchars($article['id_author']); ?>"><?php echo htmlspecialchars($article['username']); ?></p>
                     <?php if ($article['img_link']): ?>
                         <img src="<?php echo htmlspecialchars($article['img_link']); ?>" alt="Article Image" style="max-width: 200px;">
                     <?php endif; ?>
+                    <form action="detail.php" method="get">
+                        <input type="hidden" name="id" value="<?php echo htmlspecialchars($article['id']); ?>">
+                        <button type="submit">View Details</button>
+                    </form>
                 </li>
             <?php endwhile; ?>
         <?php else: ?>
