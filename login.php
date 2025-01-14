@@ -31,7 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->fetch();
 
     if ($stmt->num_rows > 0 && password_verify($pass, $hashed_password)) {
-        $_SESSION['login_user'] = $user;
+        $_SESSION['user_id'] = $id;
+        $_SESSION['username'] = $user;
         header("location: home.php");
     } else {
         $error = "Your Login Name or Password is invalid";
@@ -57,6 +58,7 @@ $conn->close();
         <input type="password" name="password" required><br>
         <input type="submit" value="Login"><br>
     </form>
+    <p>Don't have an account? <a href="register.php">Register here</a></p>
     <?php if(isset($error)) { echo $error; } ?>
 </body>
 </html>
