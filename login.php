@@ -21,19 +21,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pass = $_POST['password'];
 
     // Prepare and bind
-    $stmt = $conn->prepare("SELECT id, password FROM user WHERE username = ?");
+    $stmt = $conn->prepare("SELECT id, password, role FROM user WHERE username = ?");
     $stmt->bind_param("s", $user);
 
     // Execute statement
     $stmt->execute();
     $stmt->store_result();
-    $stmt->bind_result($id, $hashed_password);
+    $stmt->bind_result($id, $hashed_password, $role);
     $stmt->fetch();
 
     if ($stmt->num_rows > 0 && password_verify($pass, $hashed_password)) {
         $_SESSION['user_id'] = $id;
         $_SESSION['username'] = $user;
-        header("location: home.php");
+        $_SESSION['role'] = $role;
+
+        if ($role == 'admin') {
+            header("location: admin/admin.php");
+        } else {
+            header("location: home.php");
+        }
     } else {
         $error = "Your Login Name or Password is invalid";
     }

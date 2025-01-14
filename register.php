@@ -12,6 +12,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// Start session
+session_start();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pseudo = $_POST['pseudo'];
     $email = $_POST['email'];
@@ -52,7 +55,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("ssssss", $pseudo, $email, $password, $profile_picture, $default_solde, $default_role);
 
         if ($stmt->execute()) {
-            echo "New record created successfully";
+            // Set session variables
+            $_SESSION['user_id'] = $stmt->insert_id;
+            $_SESSION['username'] = $pseudo;
+            $_SESSION['role'] = $default_role;
+
+            // Redirect to home page
+            header("location: home.php");
+            exit;
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
