@@ -73,8 +73,12 @@ $users_result = $conn->query("SELECT * FROM user");
                     <td><?php echo $post['description']; ?></td>
                     <td><?php echo $post['img_link']; ?></td>
                     <td>
-                        <a href="edit.php?id=<?php echo $post['id']; ?>">Edit</a>
-                        <a href="admin.php?delete_post=<?php echo $post['id']; ?>" onclick="return confirm('Are you sure?')">Delete</a>
+                    <form action="../edit.php" method="post">
+            <input type="hidden" name="article_id" value="<?php echo htmlspecialchars($post['id']); ?>">
+            <button type="submit">Modifier l'article</button>
+            <a href="admin.php?delete_post=<?php echo $post['id']; ?>" onclick="return confirm('Are you sure?')">Delete</a>
+        </form>
+                        
                     </td>
                 </tr>
             <?php endwhile; ?>
@@ -102,7 +106,6 @@ $users_result = $conn->query("SELECT * FROM user");
                     <td><?php echo $user['mail_adress']; ?></td>
                     <td><?php echo $user['role']; ?></td>
                     <td>
-                        <a href="edit_user.php?id=<?php echo $user['id']; ?>">Edit</a>
                         <a href="admin.php?delete_user=<?php echo $user['id']; ?>" onclick="return confirm('Are you sure?')">Delete</a>
                     </td>
                 </tr>

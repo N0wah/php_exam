@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['article_id'])) {
         $article = $result->fetch_assoc();
 
         // Check if the user is the author or an administrator
-        if ($article['id_author'] == $userId || $_SESSION['role'] == 'admin') {
+        if ($article['id_author'] == $userId or $_SESSION['role'] == 'admin') {
             if (isset($_POST['update_article'])) {
                 // Update article
                 $name = $_POST['name'];
