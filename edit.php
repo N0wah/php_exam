@@ -74,9 +74,15 @@ $conn->close();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Edit Article</title>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
 </head>
 <body>
+    <div class="edit">
     <?php if (isset($article) && ($article['id_author'] == $userId || $_SESSION['role'] == 'admin')): ?>
         <h2>Edit Article</h2>
         <form method="post">
@@ -92,6 +98,8 @@ $conn->close();
             <button type="submit" name="update_article">Update Article</button>
             <button type="submit" name="delete_article">Delete Article</button>
         </form>
+        
     <?php endif; ?>
+    </div>
 </body>
 </html>

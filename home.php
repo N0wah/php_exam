@@ -31,36 +31,117 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
 </head>
 <body>
-    <h2>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h2>
-    <form action="account.php" method="get">
-        <button type="submit">Go to Account</button>
-        <button type="submit" formaction="logout.php">Logout</button>
-    </form>
+    <nav>
+    <div class="menu">
+        <a href="home.php" class="logo">
+            <img src="./Logo.png" alt="">
+        </a>
+        <div class="navigation">
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#produit">Produit</a></li>
+                <li><a href="./sell.php">Vendre</a></li>
+            </ul>
+            <div class="profile-section"><div class="profile-page"><span class="material-symbols-outlined">
+person
+</span> </div>
+            <div class="panier"><span class="material-symbols-outlined">
+shopping_basket
+</span></div></div>
+            
+        </div>
+    </div>
+    </nav>
+    <main>
+    <section class="sec_1" id="accueil">
+        <div class="photo1er">
+            <img src="./model1.jpg" alt="">
+            <div class="lecture">
+            <h1>Revendez, dénichez et donnez </h1>
+            <p>une seconde vie à vos vêtements préférés <br> la mode entre particuliers n’a jamais été aussi simple !</p>
+            <button>Découvrez</button>
+            </div>
+            
+        </div>
 
-    <h2>Articles for Sale</h2>
-    <ul>
+
+        <div class="photo3eme">
+            <div class="photo">
+
+            
+                <img src="./montre1.jpg" id="photo1" alt=""><div class="lecture2">
+                <p>Montre de<br>
+                Collection</p>
+                <button>Découvrez</button>
+                </div>
+            </div>
+            <div class="photo">
+                
+            
+                <img src="./chaussure1.jpg" id="photo2" alt=""><div class="lecture2">
+                <p>Chaussure Édition <br>LIMITÉ</p>
+                <button>Découvrez</button>
+                </div>
+            </div>
+             
+            <div class="photo">
+                
+                <img src="./sac1.png" id="photo3" alt="">
+                <div class="lecture2">
+                <p>Sac de Luxe <br> </p>
+                <button id="b-photo3">Découvrez</button>
+                </div>
+            </div>
+            </div> 
+        </div>
+    </section>
+    <h2 id="Titre">Les Produits de nos Utilisateurs</h2>
+    <hr id="line1">
+    <div class="container" id="produit">
+        <div class="boxcentrer">
         <?php if ($result->num_rows > 0): ?>
             <?php while($article = $result->fetch_assoc()): ?>
-                <li>
-                    <h3><?php echo htmlspecialchars($article['name']); ?></a></h3>
-                    <p><?php echo htmlspecialchars($article['description']); ?></p>
-                    <p>Price: <?php echo htmlspecialchars($article['price']); ?></p>
-                    <p>Published on: <?php echo htmlspecialchars($article['publish_date']); ?></p>
-                    <p>Author: <a href="account.php?user_id=<?php echo htmlspecialchars($article['id_author']); ?>"><?php echo htmlspecialchars($article['username']); ?></p>
+                <div id="box">      
+                    <div class="insidebox">
                     <?php if ($article['img_link']): ?>
                         <img src="<?php echo htmlspecialchars($article['img_link']); ?>" alt="Article Image" style="max-width: 200px;">
                     <?php endif; ?>
-                    <form action="detail.php" method="get">
-                        <input type="hidden" name="id" value="<?php echo htmlspecialchars($article['id']); ?>">
-                        <button type="submit">View Details</button>
-                    </form>
-                </li>
+                    </div>   
+                <h3><?php echo htmlspecialchars($article['name']); ?></a></h3>
+                    <p><?php echo htmlspecialchars($article['description']); ?></p>
+                    <p><?php echo htmlspecialchars($article['price']); ?> €</p> 
+                    <a href="detail.php?id=<?php echo htmlspecialchars($article['id']); ?>"><p>Détails</p></a>  
+                </div>  
+                        
             <?php endwhile; ?>
         <?php else: ?>
             <p>No articles for sale.</p>
         <?php endif; ?>
-    </ul>
+        </div>
+    </div>
+    </main>
+    <footer class="footer">
+    <div class="footer-container">
+                <div class="footer-section social">
+            <h2>Suivez-nous</h2>
+            <div class="social-icons">
+                <div><a href="#"><i class="fab fa-facebook-f"></i></a>
+</div>                <div><a href="#"><i class="fab fa-twitter"></i></a>
+   </div>             <div><a href="#"><i class="fab fa-instagram"></i></a>
+ </div>               <div><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 NA Company. Tous droits réservés.</p>
+    </div>
+</footer>
 </body>
 </html>

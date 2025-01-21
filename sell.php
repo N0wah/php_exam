@@ -66,22 +66,69 @@ $conn->close();
 ?>
 
 <!DOCTYPE html>
-<html>
+< lang="en">
 <head>
-    <title>Sell Article</title>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
 </head>
-<body>
-    <h2>Sell Article</h2>
+<ma>
+    <nav>
+    <div class="menu">
+        <a href="home.php" class="logo">
+            <img src="./Logo.png" alt="">
+        </a>
+        <div class="navigation">
+            <ul>
+                <li><a href="./home.php">Accueil</a></li>
+                <li><a href="./home.php#produit">Produit</a></li>
+                <li><a href="./sell.php">Vendre</a></li>
+            </ul>
+            <div class="profile-section"><div class="profile-page"><span class="material-symbols-outlined">
+person
+</span> </div>
+            <div class="panier"><span class="material-symbols-outlined">
+shopping_basket
+</span></div></div>
+            
+        </div>
+    </div>
+    </nav>
+    <main>
+    <div class="vente">
+    <h2>Vendre un produit</h2>
     <form method="post" enctype="multipart/form-data">
-        <label for="title">Title:</label>
+        <label for="title">Nom du produit</label>
         <input type="text" id="title" name="title" required><br><br>
-        <label for="description">Description:</label>
-        <textarea id="description" name="description" required></textarea><br><br>
-        <label for="price">Price:</label>
-        <input type="number" id="price" name="price" step="0.01" required><br><br>
-        <label for="img_link">Image:</label>
+        <label for="description">Description</label>
+        <textarea id="description" name="description" maxlength="70" required></textarea><br><br>
+        <label for="price">Prix</label>
+        <input type="number" id="price" name="price" required><br><br>
+        <label for="img_link">Image</label>
         <input type="file" id="img_link" name="img_link"><br><br>
         <input type="submit" value="Create Article">
     </form>
+    </div>
+    </main>
+    <footer class="footer">
+    <div class="footer-container">
+                <div class="footer-section social">
+            <h2>Suivez-nous</h2>
+            <div class="social-icons">
+                <div><a href="#"><i class="fab fa-facebook-f"></i></a>
+</div>                <div><a href="#"><i class="fab fa-twitter"></i></a>
+   </div>             <div><a href="#"><i class="fab fa-instagram"></i></a>
+ </div>               <div><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 NA Company. Tous droits réservés.</p>
+    </div>
+</footer>
 </body>
 </html>

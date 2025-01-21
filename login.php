@@ -51,20 +51,31 @@ $conn->close();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login Page</title>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
 </head>
 <body>
-    <h2>Login Page</h2>
-    <form action="" method="post">
-        <label>Username :</label>
-        <input type="text" name="username" required><br>
-        <label>Password :</label>
-        <input type="password" name="password" required><br>
-        <input type="submit" value="Login"><br>
-    </form>
-    <p>Don't have an account? <a href="register.php">Register here</a></p>
-    <?php if(isset($error)) { echo $error; } ?>
+
+    <div class="login">
+    <h2>Connexion</h2>
+        <div class="boxlogin">
+            <form action="" method="post">
+                <label>Pseudo</label>
+                <input type="text" name="username" required><br>    
+                <label>Mot de passe</label>
+                <input type="password" name="password" required><br>
+                <input type="submit" value="Connexion"><br>
+            </form>
+        </div>
+        <p class="mini_texte">Pas encore inscrit ? <a href="register.php">Cliquez ici !</a></p>
+        <?php if(isset($error)) { echo $error; } ?>
+    </div>
 </body>
-</html>
+</html> 

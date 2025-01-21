@@ -1,0 +1,655 @@
+/* style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap'); 
+
+html {
+    scroll-behavior: smooth;
+
+  }
+
+body {
+    position: relative;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #3C3D40;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    overflow-x: hidden
+}
+
+main {
+    margin-top: 150px;
+    flex: 1;
+    min-height: calc(100vh - 261px);}
+
+
+/* header */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    color: #212226;
+    padding: 10px 0;
+    z-index: 12;
+    box-shadow: rgba(255, 255, 255, 0.61) 1.95px 1.95px 2.6px;
+}
+
+nav .menu {
+    max-width: 1440px;
+    padding: 0 20px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo img {
+    max-height: 100px;
+}
+
+
+nav .profile-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+nav .profile-section .material-symbols-outlined {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+nav .profile-section .material-symbols-outlined:hover {
+    color: #666A73;
+}
+
+
+
+h2 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 28px;
+    color: #212226;
+}
+
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+.navigation li {
+    position: relative;
+}
+
+.navigation a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #212226;
+    padding: 10px 5px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: #666A73; /* Change la couleur du texte au survol */
+}
+
+.navigation a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #666A73; /* Couleur de la barre */
+    transition: width 0.3s ease;
+}
+
+.navigation a:hover::after {
+    width: 100%; /* La barre s'étend sur toute la largeur */
+}
+
+.profile-section {
+    margin-left: 15px;
+}
+
+nav img{
+    width: 145px;
+}
+
+/* main */
+
+.insidebox img{
+    padding: 10px;
+    background-color: #fff;
+    max-width: 100px;
+    max-height: 250px;
+    min-width: 50px;
+    min-height: 100px;
+}
+
+#box{
+    width: 300px;
+    min-height: 400px;
+    /* height: 500px; */
+}
+
+.insidebox{
+    min-width: 100px;
+    min-height: 250px;
+    max-width: 300px;
+    max-height: 250px;
+    background-color: #fff;
+    box-shadow: rgba(255, 255, 255, 0.61) 1.95px 1.95px 2.6px;
+    display: flex
+    
+;overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+#box h3, #box p,#box a{
+    text-align: center;
+    color: #ccc;
+}
+
+
+
+#box h3, #box p,#box a::first-letter{
+    text-transform: capitalize;
+}
+
+#box p,#box a{
+    font-family: 'poppins', sans-serif;
+    font-weight: 200;
+}
+
+#box p{
+    margin-top: -1rem;
+}
+
+#box p:last-child{
+    margin-bottom: 0;
+}
+
+#box h3{
+    font-family: 'poppins', sans-serif;
+    font-weight: 500;
+}
+
+.boxcentrer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap ;
+    width: 1260px;
+}
+
+.container{
+    display: flex; align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* main 2 */
+.sec_1 button {
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-family: "Tinos", serif;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 16px;
+  color: #ddd;
+  background-color: black;
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  
+}
+
+.sec_1 button:hover {
+
+    background-color: #666A73;
+    color: black;
+    border: 1px solid #666A73;
+    transition: all 0.5s ease-in;
+}
+
+.sec_1 {
+    height: calc(100vh - 150px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+}
+
+.photo3eme{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 440px;
+    margin-left: 20px;
+    margin-right: 20px;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+}
+
+img{
+    width: 250px;
+}
+
+.photo1er{
+    width: 95%;
+    height: 440px;
+    background-color: #fff;
+    position: relative;
+    box-shadow: rgba(255, 255, 255, 0.61) 1.95px 1.95px 2.6px;
+}
+
+
+.photo1er img{
+    position: absolute;
+    left: 26rem;
+    bottom: 0;
+}
+
+.lecture button{
+    width: 200px;
+  height: 75px;
+  font-size: 25px;
+}
+
+.lecture p{
+    color: #212226;
+}
+
+.lecture h1{color : #212226;font-size: 50px;    margin: -10px;}
+
+.lecture{
+    position: absolute;
+    top: 35%;
+    left: 40%;
+    text-align: center;
+
+}
+
+.photo{
+    position: relative;
+    width: 28%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: rgba(255, 255, 255, 0.623) 1.95px 1.95px 2.6px;
+}
+
+.photo img{
+    position: absolute;
+    left: 5%;
+    bottom: 25%;
+}
+
+.photo #photo2{
+    bottom: 20%;
+}
+
+.photo #photo3{
+    bottom: 30%;
+}
+
+.lecture2{
+    position: absolute;
+    top: 35%;
+    left : 60%;
+    text-align: center;
+}
+
+#b-photo3{
+    margin-top: 1rem;
+}
+
+
+/* footer */
+/* Style pour le footer */
+.footer {
+    position: static;
+    bottom: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    align-self: flex-end;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #f4f4f4;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #007BFF;
+}
+
+/* Réseaux sociaux */
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #ccc;
+    font-size: 40px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #007BFF;
+}
+
+.social-icons{
+    display: flex;
+justify-content: center;
+gap: 30rem;
+margin-left: -30rem;
+}
+
+/* Bas de page */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+#Titre{
+    color: white;
+}
+
+#line{
+    width :50rem;
+    height: 7px;
+    border: 0 none;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 200px;
+    margin-bottom: 90px;
+    background-color: white;
+}
+
+#produit{
+    scroll-margin-block-start: 110px;
+  /*Adds margin to the top of the viewport*/
+  
+  scroll-margin-block-end: 110px;
+  /*Adds margin to the bottom of the viewport*/
+}
+#accueil{
+    scroll-margin-block-start: 110px;
+  /*Adds margin to the top of the viewport*/
+  
+  scroll-margin-block-end: 110px;
+  /*Adds margin to the bottom of the viewport*/
+}
+ 
+
+/* PAGE VENTE ============================================================================================================= */
+.vente {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.vente form {
+    background: #fff;
+    padding: 30px;
+    box-shadow: rgba(255, 255, 255, 0.61) 1.95px 1.95px 2.6px;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Titre */
+.vente h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-size: 35px;
+}
+
+/* Labels */
+.vente form label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Champs de saisie */
+form input[type="text"],
+form input[type="number"],
+form input[type="file"],
+form textarea {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+}
+
+/* Textearea */
+.vente form textarea {
+    resize: none;
+    height: 80px;
+}
+
+/* Style au focus */
+.vente form input:focus,
+.vente form textarea:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+/* Bouton de soumission */
+.vente form input[type="submit"] {
+    width: 100%;
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-family: "Tinos", serif;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 16px;
+  color: #ddd;
+  background-color: black;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover sur le bouton */
+.vente form input[type="submit"]:hover {
+    background-color: #333;
+}
+
+/* PAge login ================================================================= */
+
+/* Conteneur du formulaire */
+.login form, .register form, .edit form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    padding: 30px;
+    box-shadow: rgba(255, 255, 255, 0.61) 1.95px 1.95px 2.6px;
+    width: 100%;
+    height: 300px;
+    box-sizing: border-box;
+}
+
+/* Titre */
+.login h2 , .register h2 .edit h2  {
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+}
+
+/* Labels */
+.login form label, .register form label .edit form label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Champs de saisie */
+.login form input[type="text"],
+.login form input[type="password"], .register form input[type="text"], .register form input[type="password"],.register form input[type="email"] .edit form input[type="hidden"], .edit form input[type="text"], .edit form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+}
+
+/* Style au focus */
+.login form input:focus, .register form input:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+/* Bouton de soumission */
+.login form input[type="submit"], .register form input[type="submit"] {
+    width: 100%;
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-family: "Tinos", serif;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 16px;
+  color: #ddd;
+  background-color: black;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover sur le bouton */
+.login form input[type="submit"]:hover, .register form input[type="submit"]:hover {
+    background-color: #333;
+}
+
+/* Texte sous le formulaire */
+.login form + p, .register form + p {
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+/* Lien d'inscription */
+.login form + p a, .register form + p a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+/* Hover sur le lien */
+.login form + p a:hover, .register form + p a:hover {
+    color: #0056b3;
+}
+
+.boxlogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 500px;
+    width: 300px;
+}
+
+.login, .register  { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.boxlogin label {
+    align-self: flex-start;
+}
+
+.mini_texte{
+    color: #ccc;
+}
+
+.register form {
+    width: 500px;
+    height: 600px;
+
+}
+
+.register label{
+    align-self: flex-start;
+}
+
+.register .mini_texte p{
+    color: #ccc;
+    text-align: center;
+}

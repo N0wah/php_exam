@@ -75,22 +75,32 @@ $conn->close();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Register</title>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
 </head>
 <body>
-    <h2>Register</h2>
+    <div class="register">
+    <h2>S'incrire</h2>
     <form method="post" enctype="multipart/form-data">
-        <label for="pseudo">Pseudo:</label>
+        <label for="pseudo">Pseudo</label>
         <input type="text" id="pseudo" name="pseudo" required><br><br>
-        <label for="email">Email:</label>
+        <label for="email">Email</label>
         <input type="email" id="email" name="email" required><br><br>
-        <label for="password">Password:</label>
+        <label for="password">Mot de passe</label>
         <input type="password" id="password" name="password" required><br><br>
         <label for="profile_picture">Profile Picture:</label>
         <input type="file" id="profile_picture" name="profile_picture"><br><br>
-        <input type="submit" value="Register">
+        <input type="submit" value="S'inscrire">
     </form>
+    <p class="mini_texte">inscrit ? <a href="login.php">Cliquez ici !</a></p>
+    </div>
+    
 </body>
 </html>
