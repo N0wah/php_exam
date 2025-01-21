@@ -527,7 +527,7 @@ form textarea {
 /* PAge login ================================================================= */
 
 /* Conteneur du formulaire */
-.login form, .register form, .edit form {
+.login form, .register form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -540,14 +540,14 @@ form textarea {
 }
 
 /* Titre */
-.login h2 , .register h2 .edit h2  {
+.login h2 , .register h2  {
     text-align: center;
     color: #fff;
     font-size: 24px;
 }
 
 /* Labels */
-.login form label, .register form label .edit form label {
+.login form label, .register form label {
     font-size: 14px;
     color: #555;
     margin-bottom: 5px;
@@ -556,7 +556,7 @@ form textarea {
 
 /* Champs de saisie */
 .login form input[type="text"],
-.login form input[type="password"], .register form input[type="text"], .register form input[type="password"],.register form input[type="email"] .edit form input[type="hidden"], .edit form input[type="text"], .edit form input[type="number"] {
+.login form input[type="password"], .register form input[type="text"], .register form input[type="password"],.register form input[type="email"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -652,4 +652,476 @@ form textarea {
 .register .mini_texte p{
     color: #ccc;
     text-align: center;
+}
+
+/* EDIT PAGE ===================================================================================================================================================== */
+
+/* Conteneur du formulaire */
+
+.boxboxbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    align-items: center;
+}
+
+.edit {
+    background: #fff;
+    padding: 30px;
+    max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: rgba(255, 255, 255, 0.61) 1.95px 1.95px 2.6px;
+}
+
+/* Titre */
+.boxboxbox h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Labels */
+.edit label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Champs de saisie */
+.edit input[type="text"],
+.edit input[type="number"],
+.edit textarea {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+}
+
+/* Zone de texte */
+.edit textarea {
+    resize: none;
+    height: 100px;
+}
+
+/* Style au focus */
+.edit input:focus,
+.edit textarea:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+/* Boutons */
+.edit button {
+    width: 48%;
+    padding: 12px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Bouton Update */
+.edit button[name="update_article"] {
+    background-color: #28a745;
+    color: #fff;
+    margin-right: 4%;
+}
+
+/* Hover Update */
+.edit button[name="update_article"]:hover {
+    background-color: #218838;
+}
+
+/* Bouton Delete */
+.edit button[name="delete_article"] {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+/* Hover Delete */
+.edit button[name="delete_article"]:hover {
+    background-color: #c82333;
+}
+
+.button_edit{
+    display: flex;
+}
+
+/* EDIT PAGE =========================================================================== */
+.detail article {
+    background: #fff;
+    margin-top: -5rem;
+    padding: 30px;
+    box-shadow: rgba(255, 255, 255, 0.61) 1.95px 1.95px 2.6px;
+    max-width: 600px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Titre */
+.detail article h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Description */
+.detail article p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Image de l'article */
+.detail article img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Prix */
+.detail article .price {
+    font-size: 20px;
+    color: #007BFF;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Boutons */
+.detail article button {
+    width: 80%;
+    max-width: 300px;
+    padding: 12px 0;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Bouton Add to Cart */
+.detail article button[name="add_to_cart"] {
+    background-color: #28a745;
+    color: #fff;
+}
+
+/* Hover Add to Cart */
+.detail article button[name="add_to_cart"]:hover {
+    background-color: #218838;
+}
+
+/* Bouton Edit Article */
+.detail article button {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+/* Hover Edit Article */
+.detail article button:hover {
+    background-color: #0056b3;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* PANIER========================================================================================= */
+
+/* Panier container */
+.panierb {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: rgba(255, 255, 255, 0.61) 1.95px 1.95px 2.6px;
+}
+
+.panierb h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Box containing cart items */
+.panierb .boxpanier {
+    padding: 20px;
+}
+
+.panierb .boxpanier ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.panierb .boxpanier li {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 15px;
+}
+
+.panierb .boxpanier li h3 {
+    font-size: 1.2rem;
+    margin: 0 15px 0 0;
+    color: #333;
+    flex: 1;
+}
+
+.panierb .boxpanier li p {
+    font-size: 1rem;
+    margin: 0;
+    color: #777;
+}
+
+.panierb .boxpanier li img {
+    max-width: 80px;
+    margin-right: 15px;
+    border-radius: 4px;
+}
+
+/* Button styles */
+.panierb button {
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-family: "Tinos", serif;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 16px;
+  color: #ddd;
+  background-color: black;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.panierb button:hover {
+    background-color: #777;
+}
+
+.panierb button:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+}
+
+/* Empty cart message */
+.panierb .boxpanier p {
+    font-size: 1rem;
+    color: #888;
+}
+
+/* Form spacing */
+.panierb form {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.panierb form input[type="hidden"] {
+    display: none;
+}
+
+/* profiel page =============================================================== */
+/* Profile container */
+.boxprofile {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: rgba(255, 255, 255, 0.61) 1.95px 1.95px 2.6px;
+}
+
+.boxprofile h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Profile information section */
+.boxprofile .inprofile {
+    padding: 20px;
+}
+
+.boxprofile .inprofile p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+/* Forms for updating information */
+.boxprofile form {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    box-shadow: rgba(255, 255, 255, 0.61) 1.95px 1.95px 2.6px;
+}
+
+.boxprofile form label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.boxprofile form input[type="email"],
+.boxprofile form input[type="password"],
+.boxprofile form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.boxprofile form input[type="submit"] {
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-family: "Tinos", serif;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 16px;
+  color: #ddd;
+  background-color: black;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.boxprofile form input[type="submit"]:hover {
+    background-color: #3C3D40;
+}
+
+.boxprofile form input[type="submit"]:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+}
+
+/* Articles list */
+.boxprofile ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.boxprofile ul li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+}
+
+.boxprofile ul li img {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 15px;
+    border-radius: 4px;
+}
+
+.boxprofile ul li p {
+    font-size: 1rem;
+    color: #777;
+}
+
+
+/* confirmation panier  */
+
+/* Order Confirmation container */
+.boxvalidation {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: rgba(255, 255, 255, 0.61) 1.95px 1.95px 2.6px;
+}
+
+.boxvalidation h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Validation content */
+.boxvalidation .validationinter {
+    padding: 20px;
+}
+
+/* Total price */
+.boxvalidation .validationinter p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3C3D40;
+    margin-bottom: 30px;
+}
+
+/* Billing Information form */
+.boxvalidation form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.boxvalidation form h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form labels and inputs */
+.boxvalidation form label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.boxvalidation form input[type="text"] {
+    width: 98%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.boxvalidation form button {
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-family: "Tinos", serif;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 16px;
+  color: #ddd;
+  background-color: black;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.boxvalidation form button:hover {
+    background-color: #3C3D40;
+}
+
+.boxvalidation form button:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
 }

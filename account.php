@@ -91,56 +91,108 @@ $conn->close();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Account</title>
+    <meta charset="UTF-8">
+    <title>N/A Company</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="./logofonblanc.png">
+
 </head>
 <body>
-    <h2>Account Information</h2>
+    <nav>
+    <div class="menu">
+        <a href="home.php" class="logo">
+            <img src="./Logo.png" alt="">
+        </a>
+        <div class="navigation">
+            <ul>
+            <li><a href="home.php#accueil">Accueil</a></li>
+                <li><a href="home.php#produit">Produit</a></li>
+                <li><a href="./sell.php">Vendre</a></li>
+            </ul>
+            <div class="profile-section"><div class="profile-page"><a href="account.php"><span class="material-symbols-outlined">
+person
+</span></a></div>
+            <div class="panier"><a href="cart.php"><span class="material-symbols-outlined">
+shopping_basket
+</span></a></div></div>
+            
+        </div>
+    </div>
+    </nav>
+<main>
+
+
+<div class="boxprofile">
+    <h2>Information du profil</h2>
+    <div class="inprofile">
     <p>Pseudo: <?php echo htmlspecialchars($user['username']); ?></p>
     <p>Email: <?php echo htmlspecialchars($user['mail_adress']); ?></p>
-    <p>Balance: <?php echo htmlspecialchars($user['solde']); ?></p>
+    <p>Solde <?php echo htmlspecialchars($user['solde']); ?></p>
 
     <?php if ($is_own_account): ?>
-        <h2>Update Email</h2>
+        <h2>Éditer votre email</h2>
         <form method="post">
-            <label for="email">New Email:</label>
+            <label for="email">Nouveau Email</label>
             <input type="email" id="email" name="email" required><br><br>
-            <input type="submit" name="update_email" value="Update Email">
+            <input type="submit" name="update_email" value="Mettre à jour">
         </form>
 
-        <h2>Update Password</h2>
+        <h2>Éditer votre mot de passe</h2>
         <form method="post">
-            <label for="password">New Password:</label>
+            <label for="password">Nouveau mot de passe</label>
             <input type="password" id="password" name="password" required><br><br>
-            <input type="submit" name="update_password" value="Update Password">
+            <input type="submit" name="update_password" value="Mettre à jour">
         </form>
 
-        <h2>Add Money to Balance</h2>
+        <h2>Ajouter du solde</h2>
         <form method="post">
-            <label for="amount">Amount:</label>
+            <label for="amount">Montant</label>
             <input type="number" id="amount" name="amount" required><br><br>
-            <input type="submit" name="add_money" value="Add Money">
+            <input type="submit" name="add_money" value="Ajouter">
         </form>
     <?php endif; ?>
 
-    <h2>Posted Articles</h2>
+    <h2>Articles Postés</h2>
     <ul>
         <?php foreach ($articles as $article): ?>
             <li>
             <img src="<?php echo htmlspecialchars($article['img_link']); ?>" alt="Article Image" style="width:50px;height:50px;">
-            <?php echo htmlspecialchars($article['name']); ?> - $<?php echo htmlspecialchars($article['price']); ?>
+            <?php echo htmlspecialchars($article['name']); ?> - €<?php echo htmlspecialchars($article['price']); ?>
             </li>
         <?php endforeach; ?>
     </ul>
 
     <?php if ($is_own_account): ?>
-        <h2>Purchased Articles</h2>
+        <h2>Articles Achetés</h2>
         <ul>
             <?php foreach ($invoices as $invoice): ?>
                 <li><?php echo htmlspecialchars($invoice['article_title']); ?></li>
             <?php endforeach; ?>
         </ul>
     <?php endif; ?>
+
+    </div>
+    </div>
+    </main>
+    <footer class="footer">
+    <div class="footer-container">
+                <div class="footer-section social">
+            <h2>Suivez-nous</h2>
+            <div class="social-icons">
+                <div><a href="#"><i class="fab fa-facebook-f"></i></a>
+</div>                <div><a href="#"><i class="fab fa-twitter"></i></a>
+   </div>             <div><a href="#"><i class="fab fa-instagram"></i></a>
+ </div>               <div><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 NA Company. Tous droits réservés.</p>
+    </div>
+</footer>
 </body>
 </html>

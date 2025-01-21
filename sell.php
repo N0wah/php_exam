@@ -69,11 +69,11 @@ $conn->close();
 < lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home Page</title>
+    <title>N/A Company</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
+    <link rel="icon" href="./logofonblanc.png">
 
 </head>
 <ma>
@@ -88,12 +88,12 @@ $conn->close();
                 <li><a href="./home.php#produit">Produit</a></li>
                 <li><a href="./sell.php">Vendre</a></li>
             </ul>
-            <div class="profile-section"><div class="profile-page"><span class="material-symbols-outlined">
+            <div class="profile-section"><div class="profile-page"><a href="account.php"><span class="material-symbols-outlined">
 person
-</span> </div>
-            <div class="panier"><span class="material-symbols-outlined">
+</span></a></div>
+            <div class="panier"><a href="cart.php"><span class="material-symbols-outlined">
 shopping_basket
-</span></div></div>
+</span></a></div></div>
             
         </div>
     </div>

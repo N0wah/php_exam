@@ -82,22 +82,74 @@ $conn->close();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Order Confirmation</title>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="./logofonblanc.png">
+
 </head>
 <body>
-    <h2>Order Confirmation</h2>
-    <p>Total: $<?php echo number_format($total, 2); ?></p>
+    <nav>
+    <div class="menu">
+        <a href="home.php" class="logo">
+            <img src="./Logo.png" alt="">
+        </a>
+        <div class="navigation">
+            <ul>
+            <li><a href="home.php#accueil">Accueil</a></li>
+                <li><a href="home.php#produit">Produit</a></li>
+                <li><a href="./sell.php">Vendre</a></li>
+            </ul>
+            <div class="profile-section"><div class="profile-page"><a href="account.php"><span class="material-symbols-outlined">
+person
+</span></a></div>
+            <div class="panier"><a href="cart.php"><span class="material-symbols-outlined">
+shopping_basket
+</span></a></div></div>
+            
+        </div>
+    </div>
+    </nav>
+<main>
+<div class="boxvalidation">
+    <h2>N/A Company</h2>
+    <div class="validationinter">
+    <p>Total: <?php echo number_format($total, 2); ?> €</p>
     <form method="post">
-        <h3>Billing Information</h3>
-        <label for="billing_name">Name:</label>
+        <h3>Information Facture</h3>
+        <label for="billing_name">Nom</label>
         <input type="text" id="billing_name" name="billing_name" required><br>
-        <label for="billing_address">Address:</label>
+        <label for="billing_address">Adresse</label>
         <input type="text" id="billing_address" name="billing_address" required><br>
-        <label for="billing_city">City:</label>
+        <label for="billing_city">Ville</label>
         <input type="text" id="billing_city" name="billing_city" required><br>
-        <label for="billing_postal">Postal Code:</label>
+        <label for="billing_postal">Code Postal</label>
         <input type="text" id="billing_postal" name="billing_postal" required><br>
-        <button type="submit" name="confirm_order">Confirm Order</button>
+        <button type="submit" name="confirm_order">Confirmer la commande</button>
     </form>
+    </div>
+
+    </div>
+
+    
+
+    </main>
+    <footer class="footer">
+    <div class="footer-container">
+                <div class="footer-section social">
+            <h2>Suivez-nous</h2>
+            <div class="social-icons">
+                <div><a href="#"><i class="fab fa-facebook-f"></i></a>
+</div>                <div><a href="#"><i class="fab fa-twitter"></i></a>
+   </div>             <div><a href="#"><i class="fab fa-instagram"></i></a>
+ </div>               <div><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 NA Company. Tous droits réservés.</p>
+    </div>
+</footer>
 </body>
 </html>

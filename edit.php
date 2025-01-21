@@ -74,32 +74,75 @@ $conn->close();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home Page</title>
+    <title>N/A Company</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
+    <link rel="icon" href="./logofonblanc.png">
 
 </head>
 <body>
-    <div class="edit">
+    <nav>
+    <div class="menu">
+        <a href="home.php" class="logo">
+            <img src="./Logo.png" alt="">
+        </a>
+        <div class="navigation">
+            <ul>
+            <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#produit">Produit</a></li>
+                <li><a href="./sell.php">Vendre</a></li>
+            </ul>
+            <div class="profile-section"><div class="profile-page"><a href="account.php"><span class="material-symbols-outlined">
+person
+</span></a></div>
+            <div class="panier"><a href="cart.php"><span class="material-symbols-outlined">
+shopping_basket
+</span></a></div></div>
+            
+        </div>
+    </div>
+    </nav>
+    <main>
+        <div class="boxboxbox">
     <?php if (isset($article) && ($article['id_author'] == $userId || $_SESSION['role'] == 'admin')): ?>
-        <h2>Edit Article</h2>
+        <h2>Modifier l'article</h2>
+        <div class="edit">
         <form method="post">
             <input type="hidden" name="article_id" value="<?php echo htmlspecialchars($article['id']); ?>">
-            <label for="name">Name:</label>
+            <label for="name">Nom</label>
             <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($article['name']); ?>" required><br>
-            <label for="description">Description:</label>
+            <label for="description">Description</label>
             <textarea id="description" name="description" required><?php echo htmlspecialchars($article['description']); ?></textarea><br>
-            <label for="price">Price:</label>
+            <label for="price">Prix</label>
             <input type="number" id="price" name="price" value="<?php echo htmlspecialchars($article['price']); ?>" required><br>
-            <label for="img_link">Image Link:</label>
-            <input type="text" id="img_link" name="img_link" value="<?php echo htmlspecialchars($article['img_link']); ?>"><br>
-            <button type="submit" name="update_article">Update Article</button>
-            <button type="submit" name="delete_article">Delete Article</button>
+            <label for="img_link">Image</label>
+            <input type="file" id="img_link" name="img_link" value="<?php echo htmlspecialchars($article['img_link']); ?>"><br>
+            <div class="button_edit">
+            <button type="submit" name="update_article">Mettre à jour</button>
+            <button type="submit" name="delete_article">Supprimer</button>
+            </div>
         </form>
         
     <?php endif; ?>
     </div>
+    </div>
+    </main>
+    <footer class="footer">
+    <div class="footer-container">
+                <div class="footer-section social">
+            <h2>Suivez-nous</h2>
+            <div class="social-icons">
+                <div><a href="#"><i class="fab fa-facebook-f"></i></a>
+</div>                <div><a href="#"><i class="fab fa-twitter"></i></a>
+   </div>             <div><a href="#"><i class="fab fa-instagram"></i></a>
+ </div>               <div><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 NA Company. Tous droits réservés.</p>
+    </div>
+</footer>
 </body>
 </html>
