@@ -73,7 +73,7 @@ $users_result = $conn->query("SELECT * FROM user");
                     <td><?php echo $post['description']; ?></td>
                     <td><?php echo $post['img_link']; ?></td>
                     <td>
-                        <a href="edit_post.php?id=<?php echo $post['id']; ?>">Edit</a>
+                        <a href="edit.php?id=<?php echo $post['id']; ?>">Edit</a>
                         <a href="admin.php?delete_post=<?php echo $post['id']; ?>" onclick="return confirm('Are you sure?')">Delete</a>
                     </td>
                 </tr>
