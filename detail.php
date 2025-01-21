@@ -105,7 +105,9 @@ shopping_basket
     <p>Prix <?php echo number_format($article['price'], 2); ?> €</p>
 
     <form method="post">
-        <button type="submit" name="add_to_cart">Ajouter au panier</button>
+        <?php if ($article['id_author'] != $_SESSION['user_id']): ?>
+            <button type="submit" name="add_to_cart">Add to Cart</button>
+        <?php endif; ?>
     </form>
 
     <?php if ($article['id_author'] == $_SESSION['user_id']): ?>
