@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("location: home.php");
         }
     } else {
-        $error = "Your Login Name or Password is invalid";
+        $error = "Votre pseudo ou mot de passe est incorrect.";
     }
 
     $stmt->close();
@@ -75,7 +75,7 @@ $conn->close();
             </form>
         </div>
         <p class="mini_texte">Pas encore inscrit ? <a href="register.php">Cliquez ici !</a></p>
-        <?php if(isset($error)) { echo $error; } ?>
+        <p><?php if(isset($error)) { echo $error; } ?></p>
     </div>
 </body>
 </html> 

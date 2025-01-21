@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 20 jan. 2025 à 08:21
--- Version du serveur : 8.0.31
--- Version de PHP : 8.0.26
+-- Généré le : mar. 21 jan. 2025 à 22:22
+-- Version du serveur : 9.1.0
+-- Version de PHP : 8.3.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,14 +37,20 @@ CREATE TABLE IF NOT EXISTS `article` (
   `id_author` int NOT NULL,
   `img_link` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `article`
 --
 
 INSERT INTO `article` (`id`, `name`, `description`, `price`, `publish_date`, `id_author`, `img_link`) VALUES
-(1, 'Along', 'Vends un Along bon travailleur', 130, '2025-01-14 09:06:34', 1, 'uploads/image.png');
+(16, 'Pantalon Cargo', 'Pantalon pratique avec poches latérales, souvent ample et en coton.', 99, '2025-01-21 22:18:53', 6, 'uploads/pantalon-cargo-jogger-treillis-478078.webp'),
+(17, 'Ensemble Complet ', 'Un super ensemble vestimentaire formel, composé d\'une veste e', 200, '2025-01-21 22:19:32', 6, 'uploads/istockphoto-468828120-612x612.jpg'),
+(18, 'Basket ', 'Bbb Basket ', 100, '2025-01-21 22:19:52', 6, 'uploads/capture-d-cran-2023-12-28-11.00.43.png'),
+(19, 'Basket ', 'encore', 100, '2025-01-21 22:20:01', 6, 'uploads/vegas.jpg'),
+(20, 'Slip', 'super slip pour dormir', 5000, '2025-01-21 22:20:20', 6, 'uploads/163789192194a3cf8419cae25e888eb1ef631976df_thumbnail_720x.jpg'),
+(21, 'Haut Roulé', 'Col', 200, '2025-01-21 22:20:54', 6, 'uploads/LAS-318D-E-599-101-COL-5---12316-gris_6.webp'),
+(22, 'Bel homme', 'A tot farie', 5000, '2025-01-21 22:21:28', 6, 'uploads/homme-affaires-dans-costume-fond-transparent-blanc_457222-4093.avif');
 
 -- --------------------------------------------------------
 
@@ -58,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `user_id` int NOT NULL,
   `article_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -77,13 +83,6 @@ CREATE TABLE IF NOT EXISTS `invoice` (
   `invoice_postal` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Déchargement des données de la table `invoice`
---
-
-INSERT INTO `invoice` (`id`, `user_id`, `transaction_date`, `amount`, `invoice_address`, `invoice_city`, `invoice_postal`) VALUES
-(1, 2, '2025-01-14', 1000, 'Je sais pas', 'Cacasur mer', '06326');
 
 -- --------------------------------------------------------
 
@@ -116,17 +115,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   `role` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `mail_adress`, `solde`, `profile_picture`, `role`) VALUES
-(1, 'Caca', '$2y$10$/anIfgCNwQe1a6tEFQtvfeXXW.zKnsuueE8NCJaUT4EXCV3/372/m', 'caca@gmail.com', 0, 'src/img/Default_Profile_Picture.png', 'none'),
-(2, 'Abbachio', '$2y$10$WLbIZudVlvbllDLke6DSwOpyUnVrvigUb.F6cjxjQQj0xD5qyYNhq', 'leone@gmail.com', 400, 'uploads/tumblr_inline_pqkys0GrEn1rvg9kl_1280.jpg', 'none'),
-(3, 'Admin', '$2y$10$gCmYuWAempvuI2LxKqROpua0vRYVfP4rY31mPMO475LCfeFk/Fp62', 'admin@admin.com', 0, 'src/img/Default_Profile_Picture.png', 'admin'),
-(4, 'adrien', '$2y$10$lDuLOEfgwb1UvlIBtz305.FoRKWF0RyoOCi7QiP63iAiADv/wbZRS', 'adrienleroux@gmail.com', 0, 'src/img/Default_Profile_Picture.png', 'none');
+(6, 'Alongkorn', '$2y$10$O6OeU6wvvJqm31NXOAOcxO9hVBWsmMAwd/pnxmsbc6CLfBT/ainfu', 'Along@along.com', 0, 'src/img/Default_Profile_Picture.png', 'none');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

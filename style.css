@@ -149,6 +149,11 @@ nav img{
     width: 300px;
     min-height: 400px;
     /* height: 500px; */
+    transition: transform .2s;
+}
+
+#box:hover{
+    transform: scale(1.1);
 }
 
 .insidebox{
